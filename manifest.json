@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "StreamSave Pro - Video Downloader",
+  "version": "1.2.0",
+  "description": "Download videos from YouTube and Facebook with one click using the StreamSave engine.",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.facebook.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
